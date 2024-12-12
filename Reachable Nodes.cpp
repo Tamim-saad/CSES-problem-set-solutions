@@ -37,8 +37,7 @@ int main() {
   }
 
   for (i = 1; i <= n; i++)
-    if (!vis[i])
-      dfs(i);
+    dfs(i);
 
   vector<bitset<50001>> cnt(n + 1, bitset<50001>());
 
