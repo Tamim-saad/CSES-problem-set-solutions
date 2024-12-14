@@ -55,5 +55,6 @@ int main() {
 
   area = getPolygonArea(points);
 
+  // Using Pick's Theorem:
   cout << (abs(area) - onLine) / 2 + 1 << " " << onLine;
 }
