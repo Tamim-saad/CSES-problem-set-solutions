@@ -47,7 +47,7 @@ void dfs(ll curr, ll parnt) {
     if (!vis[neigh]) {
       dfs(neigh, curr);
       low[curr] = min(low[curr], low[neigh]);
-      if (low[neigh] > explr[curr]) {
+      if (explr[curr] < low[neigh]) {
         ans.push_back({neigh, curr});
       }
     } else {
