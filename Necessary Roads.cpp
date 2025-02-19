@@ -13,6 +13,29 @@ vector<ll> par, vis, low, explr;
 vector<pair<ll, ll>> ans;
 vector<vector<ll>> adj_list;
 
+/**
+ * @brief Depth-First Search (DFS) to find bridges in a graph.
+ *
+ * This function performs a DFS traversal to find all the bridges in an undirected graph.
+ * A bridge is an edge which, when removed, makes the graph disconnected.
+ *
+ * @param curr The current node being explored.
+ * @param parnt The parent node of the current node.
+ *
+ * @details
+ * - `vis` is a vector that keeps track of visited nodes.
+ * - `low` is a vector that stores the lowest discovery time reachable from the subtree rooted with
+ * the node.
+ * - `explr` is a vector that stores the discovery times of visited nodes.
+ * - `timee` is a global variable to keep track of the discovery time.
+ * - `par` is a vector that stores the parent nodes in the DFS tree.
+ * - `adj_list` is the adjacency list representing the graph.
+ * - `ans` is a vector that stores the bridges found in the graph.
+ *
+ * The function updates the `low` and `explr` values for each node and checks if the current edge is
+ * a bridge.
+ */
+
 void dfs(ll curr, ll parnt) {
   if (vis[curr] == 1) return;
   low[curr] = explr[curr] = timee++;
