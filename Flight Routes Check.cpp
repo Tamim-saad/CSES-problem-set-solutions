@@ -27,6 +27,7 @@ void dfs(ll curr) {
 }
 
 int main() {
+  fast;
   ll i, x, y, n, m, ans = 0;
 
   cin >> n >> m;
