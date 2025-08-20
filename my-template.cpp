@@ -1,9 +1,42 @@
-/// say Alhamdulillah
+/// Alhamdulillah
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace std;
 using namespace __gnu_pbds;
+
+// Function to read a __int128 from input
+__int128 read128() {
+  string s;
+  cin >> s;
+  __int128 x = 0;
+  for (char c : s) {
+    x = x * 10 + (c - '0');
+  }
+  return x;
+}
+
+// Function to print a __int128 to output
+void print128(__int128 x) {
+  if (x == 0) {
+    cout << 0;
+    return;
+  }
+  string s;
+  bool neg = false;
+  if (x < 0) {
+    neg = true;
+    x = -x;
+  }
+  while (x > 0) {
+    s += '0' + (x % 10);
+    x /= 10;
+  }
+  if (neg)
+    s += '-';
+  reverse(s.begin(), s.end());
+  cout << s;
+}
 
 #define fast                                                                   \
   ios_base::sync_with_stdio(0);                                                \
@@ -379,7 +412,7 @@ ll getPolygonArea(vector<Point> &points) {
 }
 
 bool cwDirectionCheck(const Point &a, const Point &b, const Point &c) {
-  return (a.cross(b, c) < 0); //return true , if (a,b,c) points are clockwise
+  return (a.cross(b, c) < 0); // return true , if (a,b,c) points are clockwise
 }
 
 // ld area(Point a, Point b, Point c) { return abs((a.x * (b.y - c.y) + b.x *
@@ -663,15 +696,17 @@ bool subsetSumCheck(vector<int> &nums, int target) {
 //--------------------------------
 
 bool isprime(ll n) {
-  if (n == 1) return false;
-  if (n == 2 || n == 3) return true;
+  if (n == 1)
+    return false;
+  if (n == 2 || n == 3)
+    return true;
   ll k = sqrt(n);
   for (ll i = 2; i <= k; i++) {
-    if (n % i == 0) return false;
+    if (n % i == 0)
+      return false;
   }
   return true;
 }
-
 
 ll lcm(ll arr[], ll n) {
   ll ans = arr[0];
